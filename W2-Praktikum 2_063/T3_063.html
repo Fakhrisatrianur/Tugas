@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>T3 - Array</title>
+</head>
+<body>
+
+<h2>Hitung Min, Max, Rata-rata</h2>
+
+<input type="text" id="input" placeholder="Contoh: 10,20,30,40">
+<button onclick="hitung()">Hitung</button>
+
+<p id="hasil"></p>
+
+<script>
+function hitung() {
+    let input = document.getElementById("input").value;
+
+    if (input === "") {
+        alert("Masukkan angka dulu!");
+        return;
+    }
+
+    let arr = input.split(",").map(Number);
+
+    let min = Math.min(...arr);
+    let max = Math.max(...arr);
+
+    let total = arr.reduce((a, b) => a + b, 0);
+    let rata = total / arr.length;
+
+    document.getElementById("hasil").innerHTML =
+        "Minimum: " + min + "<br>" +
+        "Maksimum: " + max + "<br>" +
+        "Rata-rata: " + rata.toFixed(2);
+}
+</script>
+
+</body>
+</html>

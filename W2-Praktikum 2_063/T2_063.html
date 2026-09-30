@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Pencetak Angka dengan Aturan Khusus</title>
+</head>
+<body>
+<h2>Program Angka 1 - 100</h2>
+<button onclick="cetak()">Tampilkan</button>
+
+<p id="hasil"></p>
+
+<script>
+function cetak() {
+    let output = "";
+
+    for (let i = 1; i <= 100; i++) {
+        if (i % 15 === 0) {
+            output += "MI2A, ";
+        } else if (i % 3 === 0) {
+            output += "MI, ";
+        } else if (i % 5 === 0) {
+            output += "2A, ";
+        } else {
+            output += i + ", ";
+        }
+    }
+
+    document.getElementById("hasil").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulir Interaktif</title>
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <h1>Formulir Interaktif - P5_063</h1>
+        <form id="myForm">
+            <label for="userInput">Masukan Nama:</label>
+            <input type="text" id="userInput" placeholder="Masukan nama Anda">
+            <button type="submit">Kirim</button>
+        </form>
+        <p id="message"></p>
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', ()=> {
+                const form = document.getElementById('myForm');
+                const message = document.getElementById('message');
+
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Mencegah formulir dari pengiriman default
+
+                    const userInput = document.getElementById('userInput').value;
+                    if (userInput.trim()) {
+                        message.textContent = `Terima Kasih, ${userInput}! Formulir telah dikirim.`;
+                    } else {
+                        message.textContent = 'Silakan masukan nama anda'
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
